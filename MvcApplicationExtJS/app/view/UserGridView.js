@@ -2,24 +2,42 @@
     extend: 'Ext.grid.Panel',   //extend grid.Panel class
     alias: 'widget.userGridView',  //define alias for direct access
     controller: 'tabController',  //use controller
-    width: 700,
+    
     height: 600,
     id: 'userGrid',
     itemId: 'userGrid',
+    columnLines: true,
+    selModel: 'rowmodel',
+    viewConfig:
+    {
+        stripeRows: true
+    },
+    plugins: {
+        ptype: 'rowediting',
+        clicksToEdit: 1
+    }, 
     //autoScroll: true,
     initComponent: function () {  //define initComponent function
         Ext.apply(this, {    //
             store: Ext.create('app.store.TabStore'),  //use store by given its path
-            columns: [            
+            columns: [
+                {
+                    text: 'ID',
+                    dataIndex: 'ID',
+                    itemId:'ID'
+                },
             {
                 text: 'Name',
                 dataIndex: 'UserName',
-                itemId: 'name'
+                itemId: 'name',
+                flex: 1,
+                editor: 'textfield'
             },
             {
                 text: 'Father Name',
                 dataIndex: 'FatherName',
-                itemId: 'fatherName'
+                itemId: 'fatherName',
+                editor: 'textfield'
             },
             {
                 text: 'DOB',

@@ -24,7 +24,7 @@
     {
         xtype: 'trigger',  //use trigger for browse user record in grid and also use as a textfield
         fieldLabel: 'Name',
-        name: 'Name',
+        name: 'UserName',
         itemId: 'txtName',
 
         triggerCls: 'x-form-search-trigger', //for browse symbol
@@ -57,7 +57,7 @@
     {
         xtype: 'textfield',
         fieldLabel: 'Contact Number',
-        name: 'PhoneNo',
+        name: 'Contact',
         maskRe: /[^a-zA-Z!$%^&*()_+=-~^]/, //validation tool for insert only numeric data in textfield
         itemId: 'nmbrFldContactNo'
     },
@@ -99,6 +99,20 @@
                 {
                     click: 'updateClick' //call method of controller on button click
                 }
+        }
+        ,
+        {
+            xtype: 'button',
+            name: 'Clear',
+            width: '25%',
+            itemId: 'ClearBtnId',
+            text: 'Clear',
+            Handler: {
+                click: function () {
+                    this.getUserForm().clearForm();
+                    alert();
+                }
+            }
         }
         ]
     }

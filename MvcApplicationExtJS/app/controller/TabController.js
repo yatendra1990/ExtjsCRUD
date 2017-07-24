@@ -15,7 +15,7 @@
                 var result = Ext.decode(response.responseText);  //decode responseText return by jsondata assign into result variable
                 if (result.success === true) {   //check condition if result.success is true
                     Ext.Msg.show({   //create msg show box
-                        title: 'EMPLOYEE',  //define title
+                        title: 'User',  //define title
                         msg: result.message,  //asign result.message value into msg
                         buttons: Ext.Msg.OK,  //create response Ok button
                         icon: Ext.MessageBox.INFORMATION  //create message box and display information
@@ -23,7 +23,7 @@
                 }
                 else {
                     Ext.Msg.show({
-                        title: 'EMPLOYEE',
+                        title: 'User',
                         msg: result.message,
                         buttons: Ext.Msg.OK,
                         icon: Ext.MessageBox.ERROR
@@ -44,13 +44,14 @@
         var address = Ext.ComponentQuery.query("#txtAreaAddress")[0];   //get component by its itemId and assign into address variable
         address.setValue(model.data.Address);   //get value by grid view model variable associate with data and dataIndex(Address) and set value into textfield
         var name = Ext.ComponentQuery.query("#txtName")[0];  //get component by its itemId and assign into name variable
-        name.setValue(model.data.Name);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
+        name.setValue(model.data.UserName);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
         var fatherName = Ext.ComponentQuery.query("#txtfatherName")[0];  //get component by its itemId and assign into fatherName variable
         fatherName.setValue(model.data.FatherName);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
         var dob = Ext.ComponentQuery.query("#dtfield")[0];  //get component by its itemId and assign into dob variable
         dob.setValue(model.data.DOB);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
+        alert(model.data.DOB);
         var contactNo = Ext.ComponentQuery.query("#nmbrFldContactNo")[0];  //get component by its itemId and assign into contactNo variable
-        contactNo.setValue(model.data.ContactNo);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
+        contactNo.setValue(model.data.Contact);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
         var id = Ext.ComponentQuery.query("#ID")[0];  //get component by its itemId and assign into id variable
         id.setValue(model.data.ID);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
         //var grid = Ext.ComponentQuery.query("#userGrid")[0];
@@ -63,14 +64,14 @@
         var form = Ext.getCmp('userForm');   //get component of userForm and assign value into form variable
         var values = form.getValues();  //call getValue function by association of form variable and assign into values variable
         Ext.Ajax.request({     //send Ajax request to MVC controller request
-            url: './User/Update',   //give path of method define in MVC controller
+            url: './Home/Update',   //give path of method define in MVC controller
             method: 'POST',     //use POST method 
             jsonData: values,   //send values in the form of jsonData
             success: function (response) {      //define success function
                 var result = Ext.decode(response.responseText);
                 if (result.success === true) {
                     Ext.Msg.show({
-                        title: 'EMPLOYEE',
+                        title: 'User',
                         msg: result.message,
                         buttons: Ext.Msg.OK,
                         icon: Ext.MessageBox.INFORMATION
@@ -78,7 +79,7 @@
                 }
                 else {
                     Ext.Msg.show({
-                        title: 'EMPLOYEE',
+                        title: 'User',
                         msg: result.message,
                         buttons: Ext.Msg.OK,
                         icon: Ext.MessageBox.ERROR
@@ -99,14 +100,14 @@
         var form = Ext.getCmp('userForm');
         var values = form.getValues();
         Ext.Ajax.request({
-            url: './User/Delete',
-            method: 'POST',
+            url: './Home/Delete',
+            method: 'Delete',
             jsonData: values,
             success: function (response) {
                 var result = Ext.decode(response.responseText);
                 if (result.success === true) {
                     Ext.Msg.show({
-                        title: 'Response if success true',
+                        title: 'User',
                         msg: result.message,
                         buttons: Ext.Msg.OK,
                         icon: Ext.MessageBox.INFORMATION
@@ -114,7 +115,7 @@
                 }
                 else {
                     Ext.Msg.show({
-                        title: 'Response if success false',
+                        title: 'User',
                         msg: result.message,
                         buttons: Ext.Msg.OK,
                         icon: Ext.MessageBox.ERROR
@@ -131,4 +132,5 @@
             }
         });
     }
+
 });

@@ -58,20 +58,62 @@ namespace MvcApplicationExtJS.Controllers
         }
 
         [HttpPost]
-        public void Save(string uName, string fName, string dob, string addrss, string cntct) //define Save function thats call from controller.Its return type is JsonResult 
+        public JsonResult Save(UserModel user) //define Save function thats call from controller.Its return type is JsonResult 
         {
             try    //all statement written in try block thats may be causes abnormal conditions(exception)
             {
                 UserDataAccessor objAccessor = new UserDataAccessor();
-                objAccessor.SaveUserRecord(uName, fName, Convert.ToDateTime(dob), addrss,Convert.ToInt64(cntct));
-                                   
+                objAccessor.SaveUserRecord(user.UserName, user.FatherName, user.DOB, user.Address, user.Contact);
+                success = true;
+                message = "Record Inserted Successfully.";
+                return Json(new { success, message }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
                 success = false;
                 message = ex.Message;
+                return Json(new { success, message }, JsonRequestBehavior.AllowGet);
             }
-            
+
+        }
+
+        [HttpPost]
+        public JsonResult Update(UserModel user) //define Save function thats call from controller.Its return type is JsonResult 
+        {
+            try    //all statement written in try block thats may be causes abnormal conditions(exception)
+            {
+                UserDataAccessor objAccessor = new UserDataAccessor();
+                objAccessor.UpdateUserRecord(user.ID, user.UserName, user.FatherName, user.DOB, user.Address, user.Contact);
+                success = true;
+                message = "Record Updated Successfully.";
+                return Json(new { success, message }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                message = ex.Message;
+                return Json(new { success, message }, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+        [HttpDelete]
+        public JsonResult Delete(UserModel user)
+        {
+            try
+            {
+                UserDataAccessor objAccessor = new UserDataAccessor();
+                objAccessor.DeleteUserRecord(user.ID);
+                success = true;
+                message = "Record Deleted Successfully.";
+                return Json(new { success, message }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                message = ex.Message;
+                return Json(new { success, message }, JsonRequestBehavior.AllowGet);
+            }
         }
 
         public JsonResult Show()
@@ -82,10 +124,10 @@ namespace MvcApplicationExtJS.Controllers
                 UserDataAccessor objAccessor = new UserDataAccessor();
                 dsRecord = objAccessor.GetUserData();
                 List<UserModel> userList = new List<UserModel>();
-                if (dsRecord!=null && dsRecord.Tables.Count>0 && dsRecord.Tables[0].Rows.Count>0)
+                if (dsRecord != null && dsRecord.Tables.Count > 0 && dsRecord.Tables[0].Rows.Count > 0)
                 {
-                    userList=UserDataMapper.MapUserInfo(dsRecord);
-                    success = true;                    
+                    userList = UserDataMapper.MapUserInfo(dsRecord);
+                    success = true;
                 }
                 return Json(new { userList, success }, JsonRequestBehavior.AllowGet);
             }

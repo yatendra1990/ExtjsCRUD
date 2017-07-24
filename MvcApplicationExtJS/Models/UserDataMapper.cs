@@ -16,6 +16,10 @@ namespace MvcApplicationExtJS.Models
                 foreach (DataRow item in dsRecords.Tables[0].Rows)
                 {
                     UserModel user = new UserModel();
+                    if (item["ID"]!=DBNull.Value)
+                    {
+                        user.ID = Convert.ToInt32(item["ID"]);
+                    }
                     if (item["Name"]!=DBNull.Value)
                     {
                         user.UserName = item["Name"].ToString();

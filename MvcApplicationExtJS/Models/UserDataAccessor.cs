@@ -50,5 +50,46 @@ namespace MvcApplicationExtJS.Models
             }
             return result;
         }
+
+        public int UpdateUserRecord(int ID, string name, string fatherName, DateTime DOB, string address, long contactNum)
+        {
+            int result = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                objConnection.Connection.Open();
+                cmd.CommandText = "USP_UpdateUserReocrd";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = objConnection.Connection;
+
+                cmd.Parameters.AddWithValue("@ID", ID);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@FatherName", fatherName);
+                cmd.Parameters.AddWithValue("@DOB", DOB);
+                cmd.Parameters.AddWithValue("@address", address);
+                cmd.Parameters.AddWithValue("@contact", contactNum);
+
+                result = cmd.ExecuteNonQuery();
+                objConnection.Connection.Close();
+            }
+            return result;
+        }
+
+        public int DeleteUserRecord(int ID)
+        {
+            int result = 0;
+            using (SqlCommand cmd=new SqlCommand())
+            {
+                objConnection.Connection.Open();
+                cmd.CommandText = "USP_DeleteUserRecord";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = objConnection.Connection;
+
+                cmd.Parameters.AddWithValue("@ID", ID);
+
+                result = cmd.ExecuteNonQuery();
+                objConnection.Connection.Close();
+            }
+            return result;
+        }
     }
 }
