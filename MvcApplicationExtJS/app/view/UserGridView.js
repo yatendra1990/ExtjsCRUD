@@ -12,10 +12,10 @@
     {
         stripeRows: true
     },
-    plugins: {
-        ptype: 'rowediting',
-        clicksToEdit: 1
-    }, 
+    //plugins: {
+    //    ptype: 'rowediting',
+    //    clicksToEdit: 1
+    //}, 
     //autoScroll: true,
     initComponent: function () {  //define initComponent function
         Ext.apply(this, {    //

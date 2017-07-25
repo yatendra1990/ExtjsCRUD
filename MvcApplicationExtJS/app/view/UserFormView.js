@@ -44,7 +44,11 @@
         xtype: 'datefield',
         fieldLabel: 'D.O.B',
         name: 'DOB',
-        maskRe: /[^a-zA-Z0-9~!#$%^&*+-/^]/, //validation tool for  select only datefield
+        format: 'd-m-Y',
+        altFormats: 'dmY|d m Y',
+        submitFormat: 'd-m-Y',
+        renderer: Ext.util.Format.dateRenderer('d-m-Y'),
+        value: new Date(),
         itemId: 'dtfield'
     },
     {
