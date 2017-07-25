@@ -44,6 +44,7 @@
         xtype: 'datefield',
         fieldLabel: 'D.O.B',
         name: 'DOB',
+        flex:1,
         format: 'd-m-Y',
         altFormats: 'dmY|d m Y',
         submitFormat: 'd-m-Y',
@@ -113,7 +114,7 @@
             text: 'Clear',
             Handler: {
                 click: function () {
-                    this.getUserForm().clearForm();
+                    this.getForm().clearForm();
                     alert();
                 }
             }
