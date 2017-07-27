@@ -11,7 +11,7 @@
         Ext.apply(this, {
             items: [   //Items of tabview
             {
-                title: 'Testing Tab 1',
+                title: 'Add/Edit User Info',
                 width: '100%',
                 height: 300,
                 margin: '5 5 5 5',
@@ -30,8 +30,15 @@
             //    ],
             //},
             {
-                title: 'Testing Tab 2',    //Third tab display details
-                html: 'Its a example of card view with tabs,thats provide multiple task at one place using multiple page accessed by tabs',
+                title: 'User List',    //Third tab display details
+                width: '100%',
+                height: 300,
+                margin: '10',
+                items: [
+                    {
+                        xtype:'userGridView'
+                    }
+                ]
             }
             ]
         });
