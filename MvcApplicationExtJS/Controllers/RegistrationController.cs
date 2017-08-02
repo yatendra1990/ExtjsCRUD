@@ -30,7 +30,7 @@ namespace MvcApplicationExtJS.Controllers
             if (userregmodel == null)
             {
                 return HttpNotFound();
-            }
+            } 
             return View(userregmodel);
         }
 

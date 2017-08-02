@@ -57,6 +57,7 @@ namespace MvcApplicationExtJS.Controllers
             }
         }
 
+
         [HttpPost]
         public JsonResult Save(UserModel user) //define Save function thats call from controller.Its return type is JsonResult 
         {

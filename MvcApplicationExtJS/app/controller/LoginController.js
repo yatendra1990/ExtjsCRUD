@@ -7,7 +7,7 @@
     registerClick: function () {   //define save function on save button click
         alert('Clicked');
     },
-    loginClick: function () {
+    loginClick: function () { 
         var form = Ext.getCmp('loginForm');   //get component of userForm and assign value into form variable
         var values = form.getValues();   //call getValue function by association of form variable and assign into values variable
         Ext.Ajax.request({   //send Ajax request to MVC controller request

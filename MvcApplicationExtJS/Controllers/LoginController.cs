@@ -23,7 +23,7 @@ namespace MvcApplicationExtJS.Controllers
         }
 
         //
-        // GET: /Login/Details/5
+        // GET: /Login/Details/5 
 
         public ActionResult Details(int id)
         {
