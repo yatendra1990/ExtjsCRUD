@@ -49,7 +49,7 @@
         fatherName.setValue(model.data.FatherName);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
         var dob = Ext.ComponentQuery.query("#dtfield")[0];  //get component by its itemId and assign into dob variable
         dob.setValue(model.data.DOB);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
-        alert(model.data.DOB);
+       // alert(model.data.DOB);
         var contactNo = Ext.ComponentQuery.query("#nmbrFldContactNo")[0];  //get component by its itemId and assign into contactNo variable
         contactNo.setValue(model.data.Contact);  //get value by grid view model variable associate with data and dataIndex and set value into textfield
         var id = Ext.ComponentQuery.query("#ID")[0];  //get component by its itemId and assign into id variable

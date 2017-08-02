@@ -7,7 +7,7 @@ namespace MvcApplicationExtJS
     {
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
-        {
+        {  /*
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -25,7 +25,7 @@ namespace MvcApplicationExtJS
 
             
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
-
+            /*
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
                         "~/Content/themes/base/jquery.ui.resizable.css",
@@ -38,7 +38,7 @@ namespace MvcApplicationExtJS
                         "~/Content/themes/base/jquery.ui.tabs.css",
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
-                        "~/Content/themes/base/jquery.ui.theme.css"));
+                        "~/Content/themes/base/jquery.ui.theme.css"));*/
 
             //==========  Script Added By Yatendra Sharma   ================================================================
             //

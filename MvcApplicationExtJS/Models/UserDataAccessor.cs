@@ -29,6 +29,22 @@ namespace MvcApplicationExtJS.Models
             return ds;
         }
 
+        public DataSet LoginUser(string userName,string password)
+        {
+            DataSet ds = new DataSet();
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandText = "USP_UserLogin";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@userID", userName);
+                cmd.Parameters.AddWithValue("@passWord", password);
+                cmd.Connection = objConnection.Connection;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(ds);
+            }
+            return ds;
+        }
+
         public int SaveUserRecord(string name, string fatherName, DateTime DOB, string address, long contactNum)
         {
             int result = 0;
