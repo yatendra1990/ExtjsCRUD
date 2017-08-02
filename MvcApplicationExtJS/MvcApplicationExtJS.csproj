@@ -130,6 +130,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -137,6 +138,7 @@
     <Compile Include="Models\UserDataAccessor.cs" />
     <Compile Include="Models\UserDataMapper.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\UserRegModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +148,7 @@
     <Content Include="app\model\TabModel.js" />
     <Content Include="app\store\TabStore.js" />
     <Content Include="app\view\CardLayoutFormView.js" />
+    <Content Include="app\view\Home.js" />
     <Content Include="app\view\LoginView.js" />
     <Content Include="app\view\RegistrationView.js" />
     <Content Include="app\view\TabView.js" />
@@ -1653,6 +1656,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Registration\Details.cshtml" />
+    <Content Include="Views\Registration\Create.cshtml" />
+    <Content Include="Views\Registration\Edit.cshtml" />
+    <Content Include="Views\Registration\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
