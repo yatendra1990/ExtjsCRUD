@@ -9,5 +9,6 @@ Ext.application({
     launch: function () {
       
         Ext.create('app.view.CardLayoutFormView');
+        Ext.create('app.view.UploadFile');
     }
 });

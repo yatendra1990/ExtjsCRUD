@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FileUploadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
@@ -135,6 +136,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DBConnection.cs" />
+    <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\UserDataAccessor.cs" />
     <Compile Include="Models\UserDataMapper.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -152,6 +154,7 @@
     <Content Include="app\view\LoginView.js" />
     <Content Include="app\view\RegistrationView.js" />
     <Content Include="app\view\TabView.js" />
+    <Content Include="app\view\UploadFile.js" />
     <Content Include="app\view\UserFormView.js" />
     <Content Include="app\view\UserGridView.js" />
     <Content Include="app\view\UserWindow.js" />
@@ -1661,6 +1664,11 @@
     <Content Include="Views\Registration\Create.cshtml" />
     <Content Include="Views\Registration\Edit.cshtml" />
     <Content Include="Views\Registration\Delete.cshtml" />
+    <Content Include="Views\FileUpload\Index.cshtml" />
+    <Content Include="Views\FileUpload\Details.cshtml" />
+    <Content Include="Views\FileUpload\Create.cshtml" />
+    <Content Include="Views\FileUpload\Edit.cshtml" />
+    <Content Include="Views\FileUpload\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

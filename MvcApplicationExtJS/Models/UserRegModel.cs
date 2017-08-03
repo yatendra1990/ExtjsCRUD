@@ -7,16 +7,23 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Security;
 using System.Data.Entity;
 using System.Globalization;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace MvcApplicationExtJS.Models
 {
     public class UserRegContext : DbContext
     {
         public UserRegContext()
-            : base("DefaultConnection")
+            : base("DefaultConnection1")
         { }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
+
         public DbSet<UserRegModel> UserRegistration { get; set; }
+        public DbSet<FileUploadModel> File { get; set; }
     }
 
     public class UserRegModel
